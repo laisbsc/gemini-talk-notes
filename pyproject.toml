@@ -1,0 +1,48 @@
+[project]
+name = "talk-notes"
+version = "0.1.0"
+description = "Turn a YouTube talk into validated notes with Gemini and Pydantic AI."
+readme = "README.md"
+authors = [{ name = "Laís Carvalho", email = "lais@pydantic.dev" }]
+requires-python = ">=3.14"
+dependencies = [
+    "pydantic-ai-slim[google]==2.63.0",
+]
+
+[project.scripts]
+talk-notes = "talk_notes.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.32,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pydantic-evals==2.63.0",
+    "pyright>=1.1.414",
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.4.1",
+    "ruff>=0.17.3",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.pyright]
+include = ["src", "tests", "evals"]
+pythonVersion = "3.14"
+typeCheckingMode = "strict"
+venvPath = "."
+venv = ".venv"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]

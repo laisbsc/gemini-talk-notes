@@ -1,0 +1,22 @@
+# Secrets: never commit these
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Tooling
+.venv/
+.pytest_cache/
+.ruff_cache/
+.pyright/
+
+# Local outputs
+notes/
+*.raw.json

@@ -1,0 +1,12 @@
+{
+  "title": "Synthetic talk: Shipping typed AI agents",
+  "speaker": "Sample Speaker",
+  "duration": "18:20",
+  "chapters": [
+    {"start": "0:00", "title": "Intro", "notes": "The speaker explains why unvalidated LLM output breaks production systems."},
+    {"start": "2:15", "title": "Defining output types", "notes": "Shows a Pydantic model with a field validator and passes it as an agent's output type."},
+    {"start": "7:40", "title": "Retries", "notes": "Demonstrates the agent sending a validation error back to the model, which fixes its answer."},
+    {"start": "13:05", "title": "Testing", "notes": "Replaces the real model with a fake one in pytest so tests run offline."}
+  ],
+  "tools_mentioned": ["Pydantic AI", "pytest"]
+}
